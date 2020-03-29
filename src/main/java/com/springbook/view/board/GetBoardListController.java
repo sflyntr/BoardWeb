@@ -16,7 +16,7 @@ public class GetBoardListController implements Controller {
         BoardDAO boardDAO = new BoardDAO();
         ModelAndView mav = new ModelAndView();
         mav.addObject("boardList", boardDAO.getBoardList());
-        mav.setViewName("getBoardList.jsp");
+        mav.setViewName("getBoardList");
         return mav;
     }
 }

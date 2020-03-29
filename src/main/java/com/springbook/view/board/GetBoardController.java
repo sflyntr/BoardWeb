@@ -17,7 +17,7 @@ public class GetBoardController implements Controller {
         ModelAndView mav = new ModelAndView();
 
         mav.addObject("board", boardDAO.getBoard(Integer.parseInt(request.getParameter("seq"))));
-        mav.setViewName("getBoard.jsp");
+        mav.setViewName("getBoard");
         return mav;
     }
 }
