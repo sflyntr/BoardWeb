@@ -112,12 +112,13 @@ public class BoardDAO {
             stmt = conn.prepareStatement(BOARD_LIST);
             rs = stmt.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
                 board = new BoardVO();
-                board.setSeq(rs.getInt(rs.getInt("SEQ")));
+                board.setSeq(rs.getInt("SEQ"));
                 board.setTitle(rs.getString("TITLE"));
                 board.setWriter(rs.getString("WRITER"));
                 board.setContent(rs.getString("CONTENT"));
+                board.setRegDate(rs.getDate("REGDATE"));
                 board.setCnt(rs.getInt("CNT"));
                 boardList.add(board);
             }
