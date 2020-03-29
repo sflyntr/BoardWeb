@@ -34,4 +34,9 @@
 ### MVC 프레임워크의 핵심은 DispatcherServlet, HandlerMapping, ViewResolver, Controller 이다.
 
 
+# Spring MVC 프레임워크
+### dependency로 springframework에서 제공하는 DispatcherServlet, HandlerMapping, ViewResolver, Controller를 사용함. - annotation 없는 버전으로 해봄.
+
+
+
 
