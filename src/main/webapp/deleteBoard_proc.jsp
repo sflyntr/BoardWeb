@@ -1,15 +1,15 @@
 <%@page import="com.springbook.biz.board.dao.BoardDAO"%>
 <%@page import="com.springbook.biz.board.command.BoardVO"%>
-<%@page contentType="text/html; charset=EUC-KR"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 
 <%
-	// 1. »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
+	// 1. ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
 	String seq = request.getParameter("seq");
 
-	// 2. DB ¿¬µ¿ Ã³¸®
+	// 2. DB ì—°ë™ ì²˜ë¦¬
 	BoardDAO boardDAO = new BoardDAO();
 	boardDAO.deleteBoard(Integer.parseInt(seq));
 
-	// 3. È­¸é ³×ºñ°ÔÀÌ¼Ç
+	// 3. í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
 	response.sendRedirect("getBoardList.jsp");
 %>

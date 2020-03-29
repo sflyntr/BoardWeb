@@ -1,7 +1,7 @@
-<%@page contentType="text/html; charset=EUC-KR"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <%
-	// 1. ºê¶ó¿ìÀú¿Í ¿¬°áµÈ ¼¼¼Ç °´Ã¼¸¦ °­Á¦ Á¾·áÇÑ´Ù.
-	session.invalidate();
-	// 2. ¼¼¼Ç Á¾·á ÈÄ, ¸ÞÀÎ È­¸éÀ¸·Î ÀÌµ¿ÇÑ´Ù.
-	response.sendRedirect("login.jsp");
+    // 1. ë¸Œë¼ìš°ì €ì™€ ì—°ê²°ëœ ì„¸ì…˜ ê°ì²´ë¥¼ ê°•ì œ ì¢…ë£Œí•œë‹¤.
+    session.invalidate();
+    // 2. ì„¸ì…˜ ì¢…ë£Œ í›„, ë©”ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™í•œë‹¤.
+    response.sendRedirect("login.jsp");
 %>

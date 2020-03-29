@@ -1,15 +1,15 @@
 <%@page import="com.springbook.biz.board.dao.BoardDAO"%>
 <%@page import="com.springbook.biz.board.command.BoardVO"%>
-<%@page contentType="text/html; charset=EUC-KR"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 
 <%
-	// 1. »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
-	request.setCharacterEncoding("EUC-KR");
+	// 1. ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
+	request.setCharacterEncoding("UTF-8");
 	String title = request.getParameter("title");
 	String writer = request.getParameter("writer");
 	String content = request.getParameter("content");
 	
-	// 2. DB ¿¬µ¿ Ã³¸®
+	// 2. DB ì—°ë™ ì²˜ë¦¬
 	BoardVO vo = new BoardVO();
 	vo.setTitle(title);
 	vo.setWriter(writer);
@@ -17,6 +17,6 @@
 	BoardDAO boardDAO = new BoardDAO();
 	boardDAO.insertBoard(vo);
 	
-	// 3. È­¸é ³×ºñ°ÔÀÌ¼Ç
+	// 3. í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
 	response.sendRedirect("getBoardList.jsp");
 %>
