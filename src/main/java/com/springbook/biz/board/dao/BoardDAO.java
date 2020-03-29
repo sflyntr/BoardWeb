@@ -60,12 +60,12 @@ public class BoardDAO {
     }
 
     // 글 삭제
-    public void deleteBoard(BoardVO vo) {
+    public void deleteBoard(int seq) {
         System.out.println("===> JDBC로 deleteBoard() 기능 처리");
         try {
             conn = JDBCUtil.getConnection();
             stmt = conn.prepareStatement(BOARD_DELETE);
-            stmt.setInt(1,vo.getSeq());
+            stmt.setInt(1,seq);
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -102,7 +102,7 @@ public class BoardDAO {
 
 
     // 글 목록 조회
-    public List<BoardVO> getBoardList(int seq) {
+    public List<BoardVO> getBoardList() {
         System.out.println("===> JDBC로 getBoardList() 기능 처리");
 
         List<BoardVO> boardList = new ArrayList<BoardVO>();
@@ -114,7 +114,7 @@ public class BoardDAO {
 
             if (rs.next()) {
                 board = new BoardVO();
-                board.setSeq(seq);
+                board.setSeq(rs.getInt(rs.getInt("SEQ")));
                 board.setTitle(rs.getString("TITLE"));
                 board.setWriter(rs.getString("WRITER"));
                 board.setContent(rs.getString("CONTENT"));
