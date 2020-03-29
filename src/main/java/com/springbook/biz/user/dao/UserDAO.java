@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+@Repository("userDAO")
 public class UserDAO {
     private Connection conn = null;
     private PreparedStatement stmt = null;
